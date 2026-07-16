@@ -1,65 +1,5 @@
-<!DOCTYPE html>
-<html lang="th">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portfolio นายจิรชัย โนนศรีลาด</title>
 
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Tahoma,sans-serif;
-}
 
-body{
-    background:linear-gradient(135deg,#b8fff5,#98f5e1,#d9fff8);
-    overflow:hidden;
-    height:100vh;
-}
-
-h1{
-    text-align:center;
-    color:#00695c;
-    font-size:45px;
-    margin-top:30px;
-}
-
-.profile{
-    display:block;
-    width:180px;
-    height:180px;
-    margin:20px auto;
-    border-radius:50%;
-    border:5px solid white;
-    object-fit:cover;
-    box-shadow:0 0 20px rgba(0,0,0,.3);
-}
-
-.menu{
-    width:300px;
-    margin:20px auto;
-}
-
-.menu a{
-    display:block;
-    text-decoration:none;
-    text-align:center;
-    color:white;
-    background:#00b894;
-    padding:15px;
-    margin:15px 0;
-    border-radius:15px;
-    font-size:20px;
-    box-shadow:0 5px 10px rgba(0,0,0,.2);
-    transition:.3s;
-}
-
-.menu a:hover{
-    background:#00997a;
-    transform:scale(1.05);
-}
 
 .leaf{
     position:fixed;
@@ -91,28 +31,3 @@ h1{
     <a href="education.html">🎓 ประวัติการศึกษา</a>
     <a href="contact.html">📞 ช่องทางการติดต่อ</a>
 </div>
-
-<script>
-function createLeaf(){
-    let leaf=document.createElement("div");
-    leaf.className="leaf";
-
-    let leaves=["🍃","🍂","🌿"];
-    leaf.innerHTML=leaves[Math.floor(Math.random()*leaves.length)];
-
-    leaf.style.left=Math.random()*100+"vw";
-    leaf.style.animationDuration=(5+Math.random()*5)+"s";
-    leaf.style.fontSize=(20+Math.random()*20)+"px";
-
-    document.body.appendChild(leaf);
-
-    setTimeout(()=>{
-        leaf.remove();
-    },10000);
-}
-
-setInterval(createLeaf,300);
-</script>
-
-</body>
-</html>

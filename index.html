@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portfolio - จิรชัย โนนศรีลาด</title>
+<title>Portfolio นายจิรชัย โนนศรีลาด</title>
 
 <style>
 *{
@@ -12,113 +12,107 @@
     box-sizing:border-box;
     font-family:Tahoma,sans-serif;
 }
+
 body{
-    background:#f4f4f4;
-    color:#333;
+    background:linear-gradient(135deg,#b8fff5,#98f5e1,#d9fff8);
+    overflow:hidden;
+    height:100vh;
 }
-header{
-    background:#0d6efd;
-    color:white;
+
+h1{
     text-align:center;
-    padding:40px;
-}
-header img{
-    width:170px;
-    height:170px;
-    border-radius:50%;
-    object-fit:cover;
-    border:5px solid white;
-    margin-bottom:15px;
-}
-section{
-    width:90%;
-    max-width:1000px;
-    margin:30px auto;
-    background:white;
-    padding:25px;
-    border-radius:10px;
-    box-shadow:0 0 10px rgba(0,0,0,.1);
-}
-h2{
-    color:#0d6efd;
-    margin-bottom:15px;
-}
-.gallery{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-    gap:15px;
-}
-.gallery img{
-    width:100%;
-    height:180px;
-    object-fit:cover;
-    border-radius:10px;
-}
-footer{
-    text-align:center;
-    padding:20px;
-    background:#0d6efd;
-    color:white;
+    color:#00695c;
+    font-size:45px;
     margin-top:30px;
 }
-</style>
-</head>
 
+.profile{
+    display:block;
+    width:180px;
+    height:180px;
+    margin:20px auto;
+    border-radius:50%;
+    border:5px solid white;
+    object-fit:cover;
+    box-shadow:0 0 20px rgba(0,0,0,.3);
+}
+
+.menu{
+    width:300px;
+    margin:20px auto;
+}
+
+.menu a{
+    display:block;
+    text-decoration:none;
+    text-align:center;
+    color:white;
+    background:#00b894;
+    padding:15px;
+    margin:15px 0;
+    border-radius:15px;
+    font-size:20px;
+    box-shadow:0 5px 10px rgba(0,0,0,.2);
+    transition:.3s;
+}
+
+.menu a:hover{
+    background:#00997a;
+    transform:scale(1.05);
+}
+
+.leaf{
+    position:fixed;
+    top:-50px;
+    font-size:30px;
+    animation:fall linear infinite;
+}
+
+@keyframes fall{
+    from{
+        transform:translateY(-50px) rotate(0deg);
+    }
+    to{
+        transform:translateY(110vh) translateX(100px) rotate(360deg);
+    }
+}
+</style>
+
+</head>
 <body>
 
-<header>
-<img src="https://via.placeholder.com/170" alt="Profile">
-<h1>จิรชัย โนนศรีลาด</h1>
-<p>นักเรียนชั้นมัธยมศึกษาปีที่ 6</p>
-</header>
+<h1>🍃 Portfolio 🍃</h1>
 
-<section>
-<h2>1. ประวัติส่วนตัว</h2>
+<img src="images/IMG_4996.png" alt="Profile" class="profile">
 
-<p><strong>ชื่อ:</strong> จิรชัย โนนศรีลาด</p>
-<p><strong>ชื่อเล่น:</strong> ...............</p>
-<p><strong>วันเกิด:</strong> ...............</p>
-<p><strong>อายุ:</strong> ...............</p>
-<p><strong>งานอดิเรก:</strong> เล่นกีฬา ฟังเพลง ดูหนัง</p>
-</section>
-
-<section>
-<h2>2. กิจกรรม</h2>
-
-<div class="gallery">
-<img src="https://picsum.photos/300/300?1">
-<img src="https://picsum.photos/300/300?2">
-<img src="https://picsum.photos/300/300?3">
-<img src="https://picsum.photos/300/300?4">
-<img src="https://picsum.photos/300/300?5">
+<div class="menu">
+    <a href="profile.html">👤 ประวัติส่วนตัว</a>
+    <a href="activity.html">📸 กิจกรรม</a>
+    <a href="education.html">🎓 ประวัติการศึกษา</a>
+    <a href="contact.html">📞 ช่องทางการติดต่อ</a>
 </div>
 
-</section>
+<script>
+function createLeaf(){
+    let leaf=document.createElement("div");
+    leaf.className="leaf";
 
-<section>
-<h2>3. ประวัติการศึกษา</h2>
+    let leaves=["🍃","🍂","🌿"];
+    leaf.innerHTML=leaves[Math.floor(Math.random()*leaves.length)];
 
-<ul>
-<li>ระดับประถมศึกษา : โรงเรียน....................</li>
-<li>ระดับมัธยมศึกษาตอนต้น : โรงเรียน....................</li>
-<li>ระดับมัธยมศึกษาตอนปลาย : โรงเรียน....................</li>
-</ul>
-</section>
+    leaf.style.left=Math.random()*100+"vw";
+    leaf.style.animationDuration=(5+Math.random()*5)+"s";
+    leaf.style.fontSize=(20+Math.random()*20)+"px";
 
-<section>
-<h2>4. ช่องทางการติดต่อ</h2>
+    document.body.appendChild(leaf);
 
-<p>📞 โทร : 08X-XXX-XXXX</p>
-<p>📧 Email : example@gmail.com</p>
-<p>📘 Facebook : Your Facebook</p>
-<p>📷 Instagram : @yourname</p>
-<p>💬 Line : yourlineid</p>
+    setTimeout(()=>{
+        leaf.remove();
+    },10000);
+}
 
-</section>
-
-<footer>
-© 2026 Portfolio | จิรชัย โนนศรีลาด
-</footer>
+setInterval(createLeaf,300);
+</script>
 
 </body>
 </html>

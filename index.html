@@ -2,108 +2,182 @@
 <html lang="th">
 <head>
 <meta charset="UTF-8">
-<title>ประวัติส่วนตัว</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio นายจิรชัย โนนศรีลาด</title>
 
 <style>
-body{
+*{
     margin:0;
-    font-family:Tahoma,sans-serif;
-    background:#98FFCC;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Tahoma",sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#b8fff5,#98f5e1,#d9fff8);
+    overflow:hidden;
+    height:100vh;
+    position:relative;
+}
+
+/* รูปตกแต่งซ้าย */
+.left-bg{
+    position:absolute;
+    left:0;
+    top:0;
+    width:260px;
+    height:100%;
+    object-fit:cover;
+    opacity:.25;
+}
+
+/* รูปตกแต่งขวา */
+.right-bg{
+    position:absolute;
+    right:0;
+    top:0;
+    width:260px;
+    height:100%;
+    object-fit:cover;
+    opacity:.25;
 }
 
 .container{
-    width:700px;
-    margin:50px auto;
-    background:rgba(255,255,255,0.9);
-    padding:30px;
-    border-radius:20px;
-    box-shadow:0 0 15px rgba(0,0,0,.2);
+    position:relative;
+    z-index:10;
+    width:450px;
+    margin:25px auto;
+    padding:25px;
+    border-radius:25px;
+    background:rgba(255,255,255,.35);
+    backdrop-filter:blur(12px);
+    box-shadow:0 10px 35px rgba(0,0,0,.25);
     text-align:center;
 }
 
-img{
+h1{
+    color:#00695c;
+    font-size:42px;
+}
+
+.subtitle{
+    color:#00695c;
+    margin-top:8px;
+    font-size:18px;
+}
+
+.profile{
     width:180px;
     height:180px;
     border-radius:50%;
-    border:5px solid #00B894;
     object-fit:cover;
+    margin:20px auto;
+    border:6px solid white;
+    box-shadow:0 0 20px rgba(0,0,0,.3);
 }
 
-h1{
-    color:#008060;
+.info{
+    color:#00695c;
+    margin-bottom:20px;
+    line-height:1.8;
 }
 
-table{
-    margin:auto;
-    font-size:20px;
-    line-height:2;
-}
-
-.btn{
-    display:inline-block;
-    margin:20px 10px;
-    padding:12px 25px;
-    background:#00B894;
-    color:white;
+.menu a{
+    display:block;
     text-decoration:none;
-    border-radius:10px;
+    color:white;
+    background:#00b894;
+    padding:15px;
+    margin:15px 0;
+    border-radius:15px;
+    font-size:20px;
     transition:.3s;
+    box-shadow:0 5px 10px rgba(0,0,0,.2);
 }
 
-.btn:hover{
-    background:#008060;
+.menu a:hover{
+    background:#00997a;
+    transform:scale(1.05);
+}
+
+.leaf{
+    position:fixed;
+    top:-50px;
+    font-size:30px;
+    animation:fall linear infinite;
+}
+
+@keyframes fall{
+from{
+transform:translateY(-50px) rotate(0deg);
+}
+to{
+transform:translateY(110vh) translateX(100px) rotate(360deg);
+}
 }
 </style>
 
 </head>
-
 <body>
+
+<!-- รูปตกแต่งด้านซ้าย -->
+<img src="images/left.png" class="left-bg">
+
+<!-- รูปตกแต่งด้านขวา -->
+<img src="images/right.png" class="right-bg">
 
 <div class="container">
 
-<img src="me.jpg" alt="รูปประจำตัว">
+<h1>🍃 Portfolio 🍃</h1>
 
-<h1>ประวัติส่วนตัว</h1>
+<p class="subtitle">แฟ้มสะสมผลงาน</p>
 
-<table>
-<tr>
-    <td><b>ชื่อ-สกุล :</b></td>
-    <td>นายจิรชัย โนนศรีลาด</td>
-</tr>
+<img src="images/IMG_4996.png" class="profile">
 
-<tr>
-    <td><b>ชื่อเล่น :</b></td>
-    <td>....................</td>
-</tr>
+<div class="info">
+<h2>นายจิรชัย โนนศรีลาด</h2>
+<p>นักเรียนชั้นมัธยมศึกษาปีที่ 6</p>
+<p>ยินดีต้อนรับเข้าสู่แฟ้มสะสมผลงาน</p>
+</div>
 
-<tr>
-    <td><b>วันเกิด :</b></td>
-    <td>....................</td>
-</tr>
-
-<tr>
-    <td><b>อายุ :</b></td>
-    <td>.................... ปี</td>
-</tr>
-
-<tr>
-    <td><b>กำลังศึกษา :</b></td>
-    <td>....................</td>
-</tr>
-
-<tr>
-    <td><b>งานอดิเรก :</b></td>
-    <td>....................</td>
-</tr>
-</table>
-
-<br>
-
-<a href="index.html" class="btn">🏠 หน้าหลัก</a>
-
-<a href="activity.html" class="btn">➡️ หน้าถัดไป (กิจกรรม)</a>
+<div class="menu">
+<a href="profile.html">👤 ประวัติส่วนตัว</a>
+<a href="activity.html">📸 กิจกรรม</a>
+<a href="education.html">🎓 ประวัติการศึกษา</a>
+<a href="certificate.html">🏅 เกียรติบัตร</a>
+<a href="sop.html">📝 Statement of Purpose</a>
+<a href="contact.html">📞 ช่องทางการติดต่อ</a>
+</div>
 
 </div>
+
+<script>
+function createLeaf(){
+
+let leaf=document.createElement("div");
+
+leaf.className="leaf";
+
+let leaves=["🍃","🍂","🌿"];
+
+leaf.innerHTML=leaves[Math.floor(Math.random()*leaves.length)];
+
+leaf.style.left=Math.random()*100+"vw";
+
+leaf.style.animationDuration=(5+Math.random()*5)+"s";
+
+leaf.style.fontSize=(20+Math.random()*20)+"px";
+
+document.body.appendChild(leaf);
+
+setTimeout(()=>{
+leaf.remove();
+},10000);
+
+}
+
+setInterval(createLeaf,300);
+</script>
 
 </body>
 </html>
